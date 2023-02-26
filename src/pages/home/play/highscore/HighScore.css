@@ -1,0 +1,29 @@
+.HighScore {
+    font-size: clamp(1rem, 1rem + 3vw, 2rem);
+    display: grid;
+    place-items: center;
+    color: var(--clr-white);
+}
+
+.HighScore table {
+    width: 90%;
+    text-align: center;
+    line-height: 1.5em;
+    border-collapse: collapse;   
+}
+
+.HighScore tr, td, th {
+    outline: 3px solid var(--clr-desc);
+    padding-block: 0.25em;  
+}
+
+.HighScore th {
+    color: var(--clr-predator);
+    background-color: var(--clr-desc);
+    border: 0;
+}
+
+.HighScore tr:has(th) {
+    border: 0;
+}
+

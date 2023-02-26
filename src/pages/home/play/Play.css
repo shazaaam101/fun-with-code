@@ -1,0 +1,89 @@
+.Play {
+    max-width: 90%;
+    margin-inline: auto;
+    padding-block: 2em;
+}
+
+.Play .searchbar {
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    outline: 0;
+    font-size: 1rem;
+}
+
+.Play .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3em;
+    place-items: center;
+}
+
+.PlayBox {
+    
+    padding: 1em 3em;
+    align-self: stretch;
+    border-block: 2px solid var(--clr-desc);
+    background-color: var(--clr-main);
+    scale: 1;
+    transition: all 0.3s ease;
+    
+}
+
+.PlayBox:hover {
+    scale: 1.1;
+    box-shadow: 7px 7px 15px var(--clr-predator);
+}
+
+.PlayBox:hover .title {
+    color: var(--clr-predator);
+}
+
+.PlayBox .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 1em;
+}
+
+.PlayBox .title {
+    cursor: default;
+    font-size: clamp(1rem, 1rem + 3vw, 2rem);
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--clr-desc);
+    margin-block: auto;
+}
+
+.PlayBox .link {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    gap: 1em;
+    padding: 0.5em 1em;
+    background-color: var(--clr-submain);
+}
+
+.PlayBox :is(.link-play, .link-highscore) {
+    color: var(--clr-desc);
+    text-decoration: none;
+    align-self: center;
+    transition: all 0.3s ease;
+}
+
+.PlayBox :is(.link-play, .link-highscore):hover {
+    color: var(--clr-green);
+    text-shadow: var(--text-shadow);
+}
+
+.PlayBox .link-play.cannot {
+    pointer-events: none;
+    color: red;
+}
+
+.PlayBox .line {
+    width: 3px;
+    height: 100%;
+    background-color: var(--clr-predator);
+}
+

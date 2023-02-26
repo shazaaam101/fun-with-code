@@ -1,0 +1,91 @@
+.Home {
+    margin-top: 1rem;
+    padding-bottom: 10rem;
+}
+
+.Home .container {
+    margin-inline: auto;
+    width: min(90%, 50rem);
+}
+
+.Home section:not(:first-child) {
+    display: grid;
+    place-items: center;
+    padding: 2em 0;
+    gap: 3em;
+    border-radius: 1em;
+    border: 3px solid var(--clr-predator);
+}
+
+.Home section.hero {
+    background-color: transparent;
+    margin-bottom: 5em;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.Home section.hero > .hero-text {
+    font-size: clamp(1rem, 1rem + 3vw, 2.5rem);
+    text-transform: uppercase;
+    color: var(--clr-white);
+    letter-spacing: 2px;
+    height: 6rem;
+}
+
+.Home section > h3 {
+    font-size: clamp(2rem, 2rem + 3vw, 4rem);
+    color: var(--clr-predator);
+}
+
+.Home section :is(.link-create, .link-play) {
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--clr-desc);
+    background-color: black;    
+    padding: 0.25em 1em;
+    transition: all 0.3s ease;
+
+}   
+
+.Home section :is(.link-create, .link-play)::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--clr-green);
+    right: 0;
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+    top: 0;
+}
+
+.Home section :is(.link-create, .link-play)::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--clr-green);
+    right: 0;
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+    transition-delay: 0.1s;
+    bottom: 0;
+
+}
+
+.Home section :is(.link-create, .link-play):hover::before, 
+.Home section :is(.link-create, .link-play):hover::after {
+    transform: scaleX(100%);
+}
+
+
+.Home section :is(.link-create, .link-play):hover {
+    scale: 1.1;     
+}
+
+.Home .section-create {
+    margin-bottom: 3em;
+}
+

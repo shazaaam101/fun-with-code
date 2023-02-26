@@ -1,0 +1,67 @@
+.sign-up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -9rem;
+    min-height: 100vh;
+}
+
+.sign-up .container {
+    margin-inline: auto;
+    width: min(90%, 30rem);
+    border-radius: 1.5em;
+    border: 2px solid var(--clr-predator);
+    background-color: var(--clr-desc);
+}
+
+.sign-up .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding: 2em;
+}
+
+.sign-up .title {
+    font-size: clamp(1.5rem, 1rem + 5vw, 3rem);
+    color: var(--clr-predator);
+}
+
+.sign-up .wrapper .error {
+    font-size: 1.2rem;
+    border: 3px solid red;
+    padding: 0.3em 1em;
+    background-color: rgb(251, 175, 175);
+    border-radius: 1.5em;
+}
+
+.sign-up .wrapper > input {
+    padding: 0.5em 1em;
+    font-size: 1rem;
+    outline: 0;
+    border: 2px solid black;
+    max-width: 100%;
+}
+
+.sign-up .wrapper > input:is(:focus, :active) {
+    box-shadow: 
+        inset 0 0 3px var(--clr-green),
+        0 0 3px var(--clr-green);
+}
+
+.sign-up .authen-btn {
+    cursor: pointer;
+    padding: 0.5em 2em;
+    border-radius: 0.5em;
+    font-size: 1rem;
+}
+
+.sign-up .authen-btn:is(:hover, :focus-visible) {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sign-up .authen-btn:is(:active) {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+

@@ -1,0 +1,14 @@
+.Button {
+    padding: 0.25em 1em;
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--clr-predator);
+    border-radius: 1em;
+    background-color: var(--clr-desc);
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.Button:hover {
+    scale: 1.1;
+}

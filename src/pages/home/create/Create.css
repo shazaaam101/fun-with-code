@@ -1,0 +1,249 @@
+.Create {
+    min-height: 100vh;
+    margin-top: calc( -1* var(--navbar-size));
+    display: grid;
+    place-items: center;
+}
+
+.Create .container {
+    width: min(90%, 50rem);
+    margin-inline: auto;
+    text-align: center;
+}
+
+.CreateTitle form{
+    display: grid;
+    gap: 3rem;
+    padding: 2em;
+}
+
+.CreateTitle h3 {
+    font-size: clamp(2rem, 1rem + 5vw, 4rem);
+    color: var(--clr-predator);
+}
+
+.CreateTitle input {
+    font-size: 1.5rem;
+    padding: 0.5em 1em;
+    min-width: 100%;
+    outline: 0;
+    caret-color: var(--clr-predator);
+    color: var(--clr-green);
+    border: 0;
+    border-bottom: 3px solid var(--clr-predator);
+    background-color: transparent;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.CreateTitle input:is(:hover, :focus-visible) {
+    border-bottom: 1px solid var(--clr-predator);
+    box-shadow: 0px 10px 10px var(--clr-green);
+}
+
+.CreateQuestion {
+    margin-top: var(--navbar-size);
+    color: var(--clr-predator);
+}
+
+.CreateQuestion .container {
+    position: relative;
+    border: 3px solid var(--clr-desc);
+    border-radius: 1em;
+    background-color: var(--clr-submain);
+    padding: 1em 3em;
+}
+
+.CreateQuestion .title {
+    color: var(--clr-predator);
+    font-size: clamp(1.5rem, 1rem + 3vw, 3rem);
+    text-shadow: var(--text-shadow);
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.CreateQuestion :is(.prev-btn, .next-btn) {
+    position: absolute;
+    inline-size: 4rem;
+    aspect-ratio: 1;
+    top: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    border: 0;
+    background-color: var(--clr-desc);
+}
+
+.CreateQuestion :is(.prev-btn, .next-btn):hover {
+    background-color: #BBB;
+    transition: 0.3s ease;
+}
+
+.CreateQuestion :is(.prev-btn, .next-btn):active {
+    background-color: #999;
+}
+
+.CreateQuestion .prev-btn {
+    left: 0;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.CreateQuestion .next-btn {
+    right: 0;
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+}
+
+.CreateQuestion .question-label {
+    font-size: 1.5rem;
+}
+
+.CreateQuestion :is(textarea, input) {
+    outline: 0;
+    padding: 0.5em 1em;
+    caret-color: var(--clr-primary);
+    border-radius: 1em;
+}
+
+.CreateQuestion textarea {
+    vertical-align: middle;
+    resize: none;
+    width: 100%;
+}
+
+.CreateQuestion .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    margin-top: 0.5em;
+
+}
+
+.CreateQuestion .grid > .block{
+    --w-lb : 30px;
+    --w-inp : 100%;
+}
+
+.CreateQuestion .grid input{
+    width: calc(var(--w-inp)  - var(--w-lb));
+}
+
+.CreateQuestion .grid label{
+    width: var(--w-lb);
+    z-index: 99;
+}
+
+
+.CreateQuestion .true-answer p {
+    font-size: clamp(1rem, 1rem + 3vw, 1.5rem);
+    color: var(--clr-predator);
+}
+
+.CreateQuestion .true-answer .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    margin-top: 1em;
+    padding-block: .3em;
+    transition: 0.125s ease;
+    outline: 0px solid var(--clr-predator);
+    border-radius: 1em;
+}
+
+.CreateQuestion .true-answer .wrapper:has(:focus) {
+    outline: 3px solid var(--clr-predator);
+}
+
+.CreateQuestion .true-answer .wrapper > label {
+    display: flex;
+    align-items: center;
+}
+
+.CreateQuestion input[type="radio"] {
+    position: relative;
+    appearance: none;
+    background-color: #FFF;
+    margin: 0;
+    cursor: pointer;
+    width: 1rem;
+    aspect-ratio: 1;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin-left: 1em;
+}
+
+.CreateQuestion form > * + * {
+    margin-top: 1em;
+}
+
+.CreateQuestion input[type="radio"]::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    scale: 0;
+    transition: scale 120ms ease-in-out;
+    box-shadow: inset 0.5em -0.1em var(--clr-predator);
+  }
+
+  .CreateQuestion input[type="radio"]:checked::before {
+    scale: 1;
+  }
+
+.CreateQuestion .option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+@media screen and (max-width:600px) {
+    .CreateQuestion {
+        margin-top: calc(var(--navbar-size) - 2rem);
+        margin-bottom: 20rem;
+    }
+
+    .CreateQuestion .container {
+        padding: 0.5em 1em;
+    }
+
+    .CreateQuestion :is(.prev-btn, .next-btn) {
+        top: 8%;
+        font-size: 1rem;
+        inline-size: 3rem;
+    }
+
+    .CreateQuestion :is(.prev-btn, .next-btn) {
+        transform: translateY(0%);
+        inline-size: 2rem;
+        font-size: .75rem;
+    }
+
+    .CreateQuestion .prev-btn {
+        left: 35%;
+    }
+
+    .CreateQuestion .next-btn {
+        right: 35%;
+    }
+
+    .CreateQuestion .grid {
+        grid-template-columns: 1fr;
+        
+    }
+
+    .CreateQuestion .true-answer .wrapper {
+        gap: 0em;
+        justify-content: space-around;
+    }
+
+    .CreateQuestion input[type="radio"] {
+        margin-left: 0.2em;
+    }
+}
